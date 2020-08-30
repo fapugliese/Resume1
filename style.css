@@ -1,14 +1,14 @@
 /*container grid*/
 .container {
   display: grid;
-  grid-template: repeat(5, 1fr) / repeat(7, 1fr);
+  grid-template: 1fr / 25% 20% 35% ;
   grid-gap: 0.em;
 }
 
 /*right column*/
 #right {
-  grid-column: 4 / 6;
-  grid-row: 1 / 6;
+  grid-column-start: 3;
+  grid-row-start: 1;
   background-color: white;
   min-width: 300px;
   border-right-style: solid;
@@ -21,12 +21,13 @@
   border-bottom-color: grey;
   border-bottom-width: 0.5em;
   overflow-wrap: break-word;
-}
+  }
+
 
 /*left column*/
 #left {
-  grid-column: 3 / 4;
-  grid-row: 1/ 6;
+  grid-column-start: 2;
+  grid-row-start: 1;
   background-color: black;
   position: relative;
   border-left-style: solid;
@@ -38,12 +39,14 @@
   border-bottom-style: solid;
   border-bottom-color: grey;
   border-bottom-width: 0.5em;
+  overflow-wrap: break-word;
+  
 }
 
 /*left side*/
 .personal{
   color: #F2BC0C;
-  grid-column: 4 / 6;
+  grid-column: 3;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -124,6 +127,7 @@ hr{
   width: 20%;
   margin-left:0%;
 }
+
 /* html level*/
 #ht{
   width: 90%;
@@ -144,10 +148,7 @@ hr{
 
 /*cel icon*/
 #cel{
-  position: relative;
-  top: -1.5em;
-  font-size: 20px;
-  left: -2em;
+  font-size: 20px;  
 }
 
 /*world icon*/
@@ -157,47 +158,36 @@ hr{
   font-size: 20px;
 }
 
-/*cel number link*/
-#number{
-  position: relative;
-  left: -2.7em;
+/*home adress link*/
+#street{
+  padding-left: 0.5em;
 }
 
- /*mail icon*/ 
-#mail{
-  position: relative;
-  left: -4.9em;
-  top: -0.5em;
+/*cel number link*/
+#number{
+  padding-left: 0.5em;  
 }
 
  /*email adress link*/ 
 #adress{
-  position: relative;
-  left: 2em;
-  top: -3.4em;
+  padding-left: 0.5em;
   font-size: 1em
-}
-
- /*linkedin icon*/ 
-#linked{
-  position: relative;
-  left: 0.em;
-  top: -4.4em;
 }
 
 /*linkedin link*/
 #linkedin{
-  position: relative;
-  left: 2.5em;
-  top: -5.4em;
+  padding-left: 0.5em; 
   font-size: 1.2em
 }
 
 /* selfie*/
 #me{
   width: 13em;
-  padding: 0.9em;
-  border-radius: 50%;  
+  border-radius: 50%; 
+}
+/*picture container*/
+#mee{
+  text-align: center;
 }
 
 /*visited link*/
@@ -226,7 +216,7 @@ body{
 }
 
 /*small screen laptops*/
-@media all and (max-width: 1000px) and (min-width: 880px) {
+@media all and (max-width: 1024px) and (min-width: 880px) {
   #title1, #title2, h3,h2{
   font-size: 1em;
   }
@@ -244,6 +234,11 @@ body{
   /*email font*/
   #adress{
   font-size: 0.85em;  
+  }
+  
+  /* selfie*/
+  #me{
+    width: 11em;
   }
 }
 
@@ -275,12 +270,14 @@ body{
   
   /*right column*/
   #right{
-    grid-column:2/5;
+    grid-column-start: 3;
+  grid-row-start: 1;
   }
   
   /*left column*/
   #left{
-    grid-column:1/2;
+    grid-column-start: 2;
+    grid-row-start: 1;
   }
   
   /*email font*/
@@ -288,9 +285,13 @@ body{
     font-size: 0.85em;  
   }
   
+  /* selfie*/
+  #me{
+    width: 8em;
+  }
 }
 /*cell phones*/
-@media only screen and (max-device-width: 480px) and (min-device-width: 320px){
+@media all and (max-device-width: 480px) and (min-device-width: 320px){
   body{ background-image: url("https://i.postimg.cc/1zkRkPMs/40-Black-Wood-Background-Textures-8.png");
     background-color: #403F3E;
     background-attachment: fixed;
@@ -301,19 +302,31 @@ body{
   /*container grid*/  
   .container {
     display: grid;
-    grid-template: repeat(7, 1fr) / repeat(7, 1fr);
+    grid-template: 2fr / 1fr;
     }
   
   /*right column*/  
   #right{
-    grid-column: 4/7;
-   
+    grid-column-start: 1;
+    grid-row-start: 2;
+    border-left-style: solid;
+    border-left-color: grey;
+    border-left-width: 0.5em;
+    border-top-style: solid;
+    border-top-color: black;
+    border-top-width: 0.5em;   
   }
   
   /*left column*/
   #left{
-    grid-column:1/4;
-    width: 25.4em; 
+    grid-column-start: 1;
+    grid-row-start: 1;
+    border-right-style: solid;
+    border-right-color: grey;
+    border-right-width: 0.5em;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 0.5em;     
   }
   
   /*right titles font*/
@@ -337,65 +350,34 @@ body{
   }
   
   /*email adress link*/
-  #adress{
-    display:flex;
-    position: relative;
-    left: -2.5em;
-    top: 1em;
+  #adress{    
     font-size: 1.48em  
   }
   
   /*linkedin link*/
   #linkedin{
-    position: relative;
-    right: -1em;
-    top: -1.8em;
     font-size: 1.53em
   }
   
-  /*linkedin icon*/ 
-  #linked{
-    position: relative;
-    left: 0.7em;
-    top: 1.2em;
-  }
-  
-  /*mail icon*/
-  #mail{
-    position: relative;
-    left: -2.7em;
-    top: -0.5em;
-    }
-  
    /*cel icon*/
-  #cel{
-    position: relative;
-    top: -1.2em;
-    font-size: 21px;
-    left: -1.2em;
+  #cel{    
+    font-size: 21px;    
     }
   
    /*world icon*/
-  #mundo{
-    position: relative;
-    top: -2.5em;
-    font-size: 23px;
-    left: 0.8em;
+  #mundo{    
+    font-size: 23px;    
     }
   
    /*cel number link*/
   #number{
-    position: relative;
-    left: -0.5em;
+   
     font-size: 1.8em
       }
   
    /*home adress link*/
-  #street{
-    position: relative;
-    left: 1em;
-    font-size: 1.53em;
-    top: -2em;
+  #street{   
+    font-size: 1.53em;    
       }
   
   /*left titles*/
